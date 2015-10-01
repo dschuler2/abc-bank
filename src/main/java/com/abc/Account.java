@@ -19,19 +19,23 @@ public class Account {
         accountBalance = 0;
     }
 
+    // Each time a deposit is made, add to accountBalance.
     public void deposit(double amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException("amount must be greater than zero");
         } else {
             transactions.add(new Transaction(amount));
+            accountBalance += amount;
         }
     }
 
+// Each time a withdrawal is made, subtract from accountBalance.
 public void withdraw(double amount) {
     if (amount <= 0) {
         throw new IllegalArgumentException("amount must be greater than zero");
     } else {
         transactions.add(new Transaction(-amount));
+        accountBalance -= amount;
     }
 }
 
@@ -57,16 +61,18 @@ public void withdraw(double amount) {
         }
     }
 
+    // Return the value of accountBalance.
     public double sumTransactions() {
-       return checkIfTransactionsExist(true);
+       //return checkIfTransactionsExist(true);
+       return accountBalance;
     }
 
-    private double checkIfTransactionsExist(boolean checkAll) {
+    /*private double checkIfTransactionsExist(boolean checkAll) {
         double amount = 0.0;
         for (Transaction t: transactions)
             amount += t.amount;
         return amount;
-    }
+    }*/
 
     public int getAccountType() {
         return accountType;

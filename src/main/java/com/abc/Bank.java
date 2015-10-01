@@ -34,7 +34,8 @@ public class Bank {
         return total;
     }
 
-    public String getFirstCustomer() {
+    // Commenting out this function as it appears to serve no useful purpose in the program.
+    /*public String getFirstCustomer() {
         try {
             customers = null;
             return customers.get(0).getName();
@@ -42,5 +43,5 @@ public class Bank {
             e.printStackTrace();
             return "Error";
         }
-    }
+    }*/
 }

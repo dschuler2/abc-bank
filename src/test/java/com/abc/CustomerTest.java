@@ -18,17 +18,20 @@ public class CustomerTest {
         checkingAccount.deposit(100.0);
         savingsAccount.deposit(4000.0);
         savingsAccount.withdraw(200.0);
+        henry.transferBetweenAccounts(savingsAccount, checkingAccount, 500.0);
 
         assertEquals("Statement for Henry\n" +
                 "\n" +
                 "Checking Account\n" +
                 "  deposit $100.00\n" +
-                "Total $100.00\n" +
+                "  deposit $500.00\n" +
+                "Total $600.00\n" +
                 "\n" +
                 "Savings Account\n" +
                 "  deposit $4,000.00\n" +
                 "  withdrawal $200.00\n" +
-                "Total $3,800.00\n" +
+                "  withdrawal $500.00\n" +
+                "Total $3,300.00\n" +
                 "\n" +
                 "Total In All Accounts $3,900.00", henry.getStatement());
     }

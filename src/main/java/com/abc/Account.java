@@ -14,9 +14,14 @@ public class Account {
     private double accountBalance;
 
     public Account(int accountType) {
-        this.accountType = accountType;
-        this.transactions = new ArrayList<Transaction>();
-        accountBalance = 0;
+        if ((accountType < 0) || (accountType > 2)) {
+            throw new IllegalArgumentException("account type cannot be less than zero or greater than two");
+        }
+        else {
+            this.accountType = accountType;
+            this.transactions = new ArrayList<Transaction>();
+            accountBalance = 0;
+        }
     }
 
     // Each time a deposit is made, add to accountBalance.

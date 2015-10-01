@@ -11,10 +11,12 @@ public class Account {
 
     private final int accountType;
     public List<Transaction> transactions;
+    private double accountBalance;
 
     public Account(int accountType) {
         this.accountType = accountType;
         this.transactions = new ArrayList<Transaction>();
+        accountBalance = 0;
     }
 
     public void deposit(double amount) {

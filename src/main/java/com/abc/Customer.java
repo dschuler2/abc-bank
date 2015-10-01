@@ -22,6 +22,12 @@ public class Customer {
         accounts.add(account);
         return this;
     }
+    
+    // Transfer money specified by amount from Account a1 to Account a2.
+    public Customer transferBetweenAccounts(Account a1, Account a2, int amount) {
+        a1.withdraw(amount);
+        a2.deposit(amount);
+    }
 
     public int getNumberOfAccounts() {
         return accounts.size();

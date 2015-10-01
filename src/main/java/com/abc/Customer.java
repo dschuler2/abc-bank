@@ -24,7 +24,7 @@ public class Customer {
     }
     
     // Transfer money specified by amount from Account a1 to Account a2.
-    public Customer transferBetweenAccounts(Account a1, Account a2, int amount) {
+    public Customer transferBetweenAccounts(Account a1, Account a2, double amount) {
         a1.withdraw(amount);
         a2.deposit(amount);
     }
